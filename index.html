@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <title>Text To Speech</title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            background: rgb(0, 0, 0);
+        }
+        .container {
+            width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: rgba(236, 236, 236, 0.12) 0px 2px 4px 0px, rgba(218, 218, 218, 0.32) 0px 2px 16px 0px;;
+        }
+        h1{
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        button{
+            padding: 10px;
+            background: rgb(47, 255, 245);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 11pt;
+        }
+        textarea{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            outline: none;
+            border: none;
+            resize: none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TextToSpeech</h1>
+        <textarea name="text" rows="5" cols="30" placeholder="Type your text here..." id="text"></textarea>
+        <button id="button">Text To Speech</button>
+    </div>
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener("click",function(){
+            var textarea = document.querySelector("textarea");
+            if(textarea.value !=''){
+                responsiveVoice.speak(textarea.value);
+            }
+        });
+    </script>
+</body>
+</html>
